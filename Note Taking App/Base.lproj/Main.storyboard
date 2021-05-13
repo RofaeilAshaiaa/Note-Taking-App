@@ -43,11 +43,47 @@
                     <navigationItem key="navigationItem" id="wl2-33-TPO"/>
                     <connections>
                         <outlet property="notesTable" destination="6iR-9g-LZv" id="44v-DN-9mH"/>
+                        <segue destination="dkH-Zz-I3w" kind="show" identifier="noteDetail" id="ya3-LK-HEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="719" y="72"/>
+        </scene>
+        <!--Note-->
+        <scene sceneID="wKi-bB-X81">
+            <objects>
+                <viewController title="Note" id="dkH-Zz-I3w" customClass="NoteDetailsViewController" customModule="Note_Taking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HPv-kn-AaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w5g-0O-FPh">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PzH-eh-ltp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w5g-0O-FPh" firstAttribute="trailing" secondItem="PzH-eh-ltp" secondAttribute="trailing" id="GDu-XH-bQv"/>
+                            <constraint firstItem="w5g-0O-FPh" firstAttribute="top" secondItem="PzH-eh-ltp" secondAttribute="top" id="JOs-Th-K0i"/>
+                            <constraint firstItem="w5g-0O-FPh" firstAttribute="leading" secondItem="PzH-eh-ltp" secondAttribute="leading" id="f3l-xn-NTG"/>
+                            <constraint firstItem="w5g-0O-FPh" firstAttribute="bottom" secondItem="PzH-eh-ltp" secondAttribute="bottom" id="fFu-US-DLt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kIE-oD-33p"/>
+                    <connections>
+                        <outlet property="noteBody" destination="w5g-0O-FPh" id="3tC-9d-1DW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nlQ-r6-hDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472.8" y="71.514242878560722"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aR3-fg-ZkA">
@@ -69,6 +105,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -13,6 +13,7 @@
 		66C87102264D899300D00A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C87100264D899300D00A6A /* Main.storyboard */; };
 		66C87104264D899400D00A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66C87103264D899400D00A6A /* Assets.xcassets */; };
 		66C87107264D899400D00A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C87105264D899400D00A6A /* LaunchScreen.storyboard */; };
+		66C87110264DD80A00D00A6A /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8710F264DD80A00D00A6A /* NoteDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		66C87103264D899400D00A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66C87106264D899400D00A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66C87108264D899400D00A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66C8710F264DD80A00D00A6A /* NoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				66C870FA264D899300D00A6A /* AppDelegate.swift */,
 				66C870FC264D899300D00A6A /* SceneDelegate.swift */,
 				66C870FE264D899300D00A6A /* ViewController.swift */,
+				66C8710F264DD80A00D00A6A /* NoteDetailsViewController.swift */,
 				66C87100264D899300D00A6A /* Main.storyboard */,
 				66C87103264D899400D00A6A /* Assets.xcassets */,
 				66C87105264D899400D00A6A /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66C870FF264D899300D00A6A /* ViewController.swift in Sources */,
+				66C87110264DD80A00D00A6A /* NoteDetailsViewController.swift in Sources */,
 				66C870FB264D899300D00A6A /* AppDelegate.swift in Sources */,
 				66C870FD264D899300D00A6A /* SceneDelegate.swift in Sources */,
 			);
