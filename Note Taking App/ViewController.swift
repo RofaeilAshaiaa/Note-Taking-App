@@ -9,8 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     
+    let NOTES_KEY = "notes_list"
     @IBOutlet weak var notesTable: UITableView!
-    var data: [String] = ["Item 1", "Item 2", "Item 3", "Item 4"]
+    var notesList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
         self.navigationItem.rightBarButtonItem = addButton
         self.navigationItem.leftBarButtonItem = editButtonItem
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,11 +32,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         if notesTable.isEditing {
             return
         }
-           let name: String = "Item \(data.count + 1)"
-           data.insert(name, at: 0)
+           let name: String = "Item \(notesList.count + 1)"
+           notesList.insert(name, at: 0)
            let indexPath: IndexPath = IndexPath(row: 0, section: 0)
            notesTable.insertRows(at: [indexPath], with: .automatic)
+        saveData()
        }
+    
+    func saveData() {
+        UserDefaults.standard.set(notesList, forKey: NOTES_KEY)
+    }
+    
+    func loadData() {
+        if let loadedData = UserDefaults.standard.array(forKey: NOTES_KEY) as? [String] {
+            notesList = loadedData
+            notesTable.reloadData()
+        }
+    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
@@ -42,17 +56,18 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        data.remove(at: indexPath.row)
+        notesList.remove(at: indexPath.row)
         notesTable.deleteRows(at: [indexPath], with: .automatic)
+        saveData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return notesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier:"cell")!
-        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.text = notesList[indexPath.row]
         return cell
     }
 
